@@ -51,63 +51,87 @@ let stocks = {
 
 // order(0, production)
 
+
+// let order = (time, work) => {
+//     return new Promise ((resolve, reject) => {
+
+//         if (is_shop_open) {
+//             setTimeout(() => {
+//                 resolve(work())                
+//             }, time);
+//         }
+
+//         else {
+//             reject(console.log("Our shop is closed"));
+//         }
+
+//     })
+// }
+
+// order(2000, () => console.log( `${stocks.fruits[0]} was selected`)) // Do not use ';' in order to take advantage of the promise chaining 
+
+// // promise chaining begins. Look how neat this is 
+// .then(()=> {
+//     return(order(0000, () => console.log("Production has started")))
+// })
+
+// .then(()=> {
+//     return(order(2000, ()=> console.log("The fruit has been chopped")))
+// })
+
+// .then(()=> {
+//     return(order(1000, ()=> console.log(`${stocks.liquid[0]} and ${stocks.liquid[1]} was added`)))
+// })
+
+// .then(()=> {
+//     return(order(1000, ()=> console.log("Machine started ...")))
+// })
+
+// .then(()=> {
+//     return(order(1000, ()=> console.log(`Ice cream was placed on the ${stocks.holder[0]}` )))
+// })
+
+// .then(()=> {
+//     return(order(3000, ()=> console.log(`Topping selected ${stocks.toppings[1]}`)))
+// })
+
+// .then(()=> {
+//     return(order(2000, ()=> console.log("Serve ice cream :)")))
+// })
+
+// // Error handling in the final stages to handle is_shop_open false condition 
+
+// .catch(()=> {
+//     console.log("The customer left.")
+// })
+
+// // Finally the final handler runs even if the shop is closed or open 
+
+// .finally(()=> {
+//     console.log("Day ended. Shop closed. Bye!")
+// })
+
+// Async/Await basic building block
+
 let is_shop_open = false;
 
-let order = (time, work) => {
-    return new Promise ((resolve, reject) => {
+async function order() {
+    try{
+        await not_a_unction;
+    } 
+    
+    catch(error) {
+        console.log("not_a_function doesn't exist", error)
+    }
 
-        if (is_shop_open) {
-            setTimeout(() => {
-                resolve(work())                
-            }, time);
-        }
-
-        else {
-            reject(console.log("Our shop is closed"));
-        }
-
-    })
+    finally {
+        console.log("Runs anyways")
+    }
 }
 
-order(2000, () => console.log( `${stocks.fruits[0]} was selected`)) // Do not use ';' in order to take advantage of the promise chaining 
-
-// promise chaining begins. Look how neat this is 
-.then(()=> {
-    return(order(0000, () => console.log("Production has started")))
-})
+order()
 
 .then(()=> {
-    return(order(2000, ()=> console.log("The fruit has been chopped")))
+    console.log("Run more .then, .catch, and .finally chaining here...")
 })
 
-.then(()=> {
-    return(order(1000, ()=> console.log(`${stocks.liquid[0]} and ${stocks.liquid[1]} was added`)))
-})
-
-.then(()=> {
-    return(order(1000, ()=> console.log("Machine started ...")))
-})
-
-.then(()=> {
-    return(order(1000, ()=> console.log(`Ice cream was placed on the ${stocks.holder[0]}` )))
-})
-
-.then(()=> {
-    return(order(3000, ()=> console.log(`Topping selected ${stocks.toppings[1]}`)))
-})
-
-.then(()=> {
-    return(order(2000, ()=> console.log("Serve ice cream :)")))
-})
-
-// Error handling in the final stages to handle is_shop_open false condition 
-
-.catch(()=> {
-    console.log("The customer left.")
-})
-
-// Finally the final handler runs even if the shop is closed or open 
-
-.finally(()=> {
-    console.log("Day ended. Shop closed. Bye!")
-})
