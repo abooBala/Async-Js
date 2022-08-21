@@ -7,37 +7,40 @@ let stocks = {
 }
 
 
-// Understanding Await in the Kitchen 
+// Claner code with Async / Await 
 
 let is_shop_open = true
 
-// Handles the customer toppings choice in the middle of making the ice cream if they were not asked initially
-let toppings_choice = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(console.log("What topping will you love?"))
-        }, 3000);
-    })
+// Control operations with the time function 
+
+function time(ms) {
+    return new Promise((resolve, reject)=> {
+        if(is_shop_open){
+            setTimeout(resolve, ms);
+        }
+        else{
+            reject(console.log("Shop is closed"));
+        }
+    });
 }
 
-async function iceCreamOperation() {
-    console.log("Operation A")
-    console.log("Opearation B")
-    console.log("Operation C")
+async function kitchen(){
+    try{
+        await time(2000)
+        console.log(`${stocks.fruits[0]} was selected`)
+    }
 
-    // Go back and ask the customer what topping he wants on the ice cream and continue after you have an answer. 
-    await toppings_choice()
+    catch(error){
+        console.log("Customer left", error)
+    }
 
-    console.log("Operation D")
-    console.log("Operation E")
-    console.log("Operation F")
+    finally{
+        console.log("Day ended, shop is closed.")
+    }
+
 }
 
-iceCreamOperation();
+kitchen();
 
-// Other activities will have to continue in the kitchen 
-console.log("Cleaning the tables")
-console.log("Doing the dishes")
-console.log("Frying sauces")
-console.log("Even more activities.......")
+
 
