@@ -51,7 +51,7 @@ let stocks = {
 
 // order(0, production)
 
-let is_shop_open = true;
+let is_shop_open = false;
 
 let order = (time, work) => {
     return new Promise ((resolve, reject) => {
@@ -98,4 +98,10 @@ order(2000, () => console.log( `${stocks.fruits[0]} was selected`)) // Do not us
 
 .then(()=> {
     return(order(2000, ()=> console.log("Serve ice cream :)")))
+})
+
+// Error handling in the final stages to handle is_shop_open false condition 
+
+.catch(()=> {
+    console.log("The customer left.")
 })
