@@ -105,3 +105,9 @@ order(2000, () => console.log( `${stocks.fruits[0]} was selected`)) // Do not us
 .catch(()=> {
     console.log("The customer left.")
 })
+
+// Finally the final handler runs even if the shop is closed or open 
+
+.finally(()=> {
+    console.log("Day ended. Shop closed. Bye!")
+})
