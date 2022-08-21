@@ -7,44 +7,47 @@ let stocks = {
 }
 
 
-let order = (Fruit_name, call_production) => {
-    setTimeout(()=>{
-        console.log(`${stocks.fruits[Fruit_name]} was selected` )
-        call_production();
+// Remove the comment from line 12 to 52 to see use the callback hell
 
-    }, 2000);
+// let order = (Fruit_name, call_production) => {
+//     setTimeout(()=>{
+//         console.log(`${stocks.fruits[Fruit_name]} was selected` )
+//         call_production();
+
+//     }, 2000);
 
     
-}
+// }
 
-let production = () => {
-    setTimeout(()=> {
-        console.log(`Production has started`);
+// let production = () => {
+//     setTimeout(()=> {
+//         console.log(`Production has started`);
 
-        setTimeout(() => {
-            console.log("The fruits has been chopped");
+//         setTimeout(() => {
+//             console.log("The fruits has been chopped");
 
-            setTimeout(()=> {
-                console.log(`${stocks.liquid[0]} and ${stocks.liquid[1]} has been added`);
+//             setTimeout(()=> {
+//                 console.log(`${stocks.liquid[0]} and ${stocks.liquid[1]} has been added`);
 
-                setTimeout(()=> {
-                    console.log("Machine started ...");
+//                 setTimeout(()=> {
+//                     console.log("Machine started ...");
 
-                    setTimeout(()=> {
-                        console.log(`Ice cream was placed on the ${stocks.holder[0]}`)
+//                     setTimeout(()=> {
+//                         console.log(`Ice cream was placed on the ${stocks.holder[0]}`)
 
-                        setTimeout(() => {
-                            console.log(`Toppings selected: ${stocks.toppings[1]}`);
+//                         setTimeout(() => {
+//                             console.log(`Toppings selected: ${stocks.toppings[1]}`);
 
-                            setTimeout(() => {
-                                console.log("Serve ice cream :)")
-                            }, 2000);
-                        }, 3000);
-                    }, 2000)
-                }, 1000)
-            }, 1000)
-        }, 2000)
-    }, 0000)
-}
+//                             setTimeout(() => {
+//                                 console.log("Serve ice cream :)")
+//                             }, 2000);
+//                         }, 3000);
+//                     }, 2000)
+//                 }, 1000)
+//             }, 1000)
+//         }, 2000)
+//     }, 0000)
+// }
 
-order(0, production)
+// order(0, production)
+
