@@ -27,6 +27,8 @@ function time(ms) {
 async function kitchen(){
     
     try{
+
+        console.group("Production status:")
         await time(2000)
         console.log(`${stocks.fruits[0]} was selected`)
 
